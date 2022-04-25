@@ -66,6 +66,15 @@ router.put('/assignstudent/:sid/:cid', function(req,res,next){
     res.send('editing a teacher');
 });
 
+router.put('/assignstudent/:sid/:cid',function(req,res,next){
+    Class.findOneAndUpdate({_id:req.params.cid},
+        {
+            "$push"
+        }
+    })
+
+});
+
 
 //////////////delete/////////////////////////
 
