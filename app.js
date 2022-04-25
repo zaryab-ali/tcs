@@ -6,11 +6,10 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var adminRouter = require('./routes/admin');
-var studentRouter = require('./routes/student');
-var teacherRouter = require('./routes/teacher');
-
-
+var adminRouter=require("./routes/admin");
+var teacherRouter=require("./routes/teacher");
+var studentRouter=require("./routes/student");
+var headRouter=require("./routes/head");
 var app = express();
 
 // view engine setup
@@ -25,9 +24,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/admin', adminRouter);
-app.use('/student', studentRouter);
-app.use('teacher',teacherRouter);
+app.use('/admin',adminRouter);
+app.use('/teacher',teacherRouter);
+app.use('/student',studentRouter);
+app.use('/head',headRouter);
 
 
 // catch 404 and forward to error handler
